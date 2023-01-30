@@ -1,0 +1,15 @@
+type Query {
+  users: [User]
+  profiles: [Profile]
+  posts: [Post]
+  memberTypes: [MemberType]
+
+  user(id: String): User
+  profile(id: String): Profile
+  post(id: String): Post
+  memberType(id: String): MemberType
+}
+
+type Mutation {
+  _empty: String
+}
