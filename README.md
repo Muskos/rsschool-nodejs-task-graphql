@@ -48,3 +48,70 @@ Query
   }
 }
 ```
+
+2.2 - 2.3:
+
+```
+query GetEntity($userId: String, $profileId: String, $memberTypeId: String, $postId: String){
+    user(id: $userId){
+        id
+        email
+        firstName
+        lastName
+        subscribedToUserIds
+        posts {
+            content
+            id
+            title
+            userId
+        }
+        profile {
+            street
+            avatar
+            birthday
+            city
+            country
+            id
+            memberTypeId
+            sex
+            userId
+        }
+        memberType {
+            discount
+        }
+    }
+    profile(id: $profileId) {
+        avatar
+        birthday
+        city
+        country
+        id
+        memberTypeId
+        sex
+        street
+        userId
+    }
+    memberType(id: $memberTypeId) {
+        discount
+        id
+        monthPostsLimit
+    }
+    post(id: $postId) {
+        content
+        userId
+        id
+        title
+    }
+}
+```
+
+Variables:
+
+```
+{
+    "userId": "3034b786-65e3-4360-95fa-aca4ca93600f",
+    "profileId": "96960590-5242-49c2-b75e-2ffd11f2f190",
+    "memberTypeId": "basic",
+    "postId": "6ca58899-3eec-40e8-b887-4dfd73092396"
+}
+```
